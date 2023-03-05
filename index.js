@@ -6,6 +6,8 @@ const hostname = "localhost";
 
 const home = fs.readFileSync('./home.html')
 const about = fs.readFileSync('./about.html')
+const contact = fs.readFileSync('./contact.html')
+const service = fs.readFileSync('./service.html')
 
 
 const server = http.createServer((req,res)=>{
@@ -20,10 +22,10 @@ const server = http.createServer((req,res)=>{
         return res.end(about);
     }
     if(req.url === "/contact"){
-        return res.end("<h1>Contact Page</h1>");
+        return res.end(contact);
     }
     if(req.url === "/service"){
-       return res.end("<h1>Service Page</h1>");
+       return res.end(service);
     }else{
        return res.end("<h1>404 page not found</h1>");
     }
