@@ -4,7 +4,9 @@ const fs = require("fs");
 const port = 4000;
 const hostname = "localhost";
 
-const home = fs.readFileSync('./index.html')
+const home = fs.readFileSync('./home.html')
+const about = fs.readFileSync('./about.html')
+
 
 const server = http.createServer((req,res)=>{
     // console.log(req.url);
@@ -15,7 +17,7 @@ const server = http.createServer((req,res)=>{
         return res.end(home);
     }
     if(req.url === "/about"){
-        return res.end("<h1>About Page</h1>");
+        return res.end(about);
     }
     if(req.url === "/contact"){
         return res.end("<h1>Contact Page</h1>");
